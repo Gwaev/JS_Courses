@@ -12,8 +12,7 @@ Scenario('test something', ({ I,
    authPage.fillNewUserEmail(Date.now() + '@test.com');
    authPage.clickCreateAnAccount();
    createAccountPage.fillNewUserForm(userData);
-   I.click({css: '#submitAccount'});
-   I.see('My Account');
-
+   createAccountPage.clickRegisterButton();  //I.click({css: '#submitAccount'});
+   
    pause();   // I know that this string not for GIT ;)
 });

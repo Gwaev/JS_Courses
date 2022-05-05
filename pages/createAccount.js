@@ -1,6 +1,9 @@
 const { I } = inject();
 
 module.exports = {
+
+    registerButton: {css: '#submitAccount'},
+
     firstNameInput: { css: '#customer_firstname' },
     lastNameInput: { css: '#customer_lastname' },
     stateSelect: { css: '#id_state' },
@@ -18,6 +21,10 @@ module.exports = {
     mobilePhoneInput: {css: '#phone_mobile'},
     genderMrPick: {css: '#id_gender1'},
     addressInput: {css: '#address1'},
+
+    clickRegisterButton() {
+        I.click(this.registerButton);
+    },
 
     fillNewUserForm(user) {
         this.waitForPageLoad();
