@@ -31,7 +31,7 @@ module.exports = {
         I.click(this.genderMrPick);
         I.fillField(this.firstNameInput, user.firstName);
         I.fillField(this.lastNameInput, user.lastName);
-        I.fillField(this.passwordInput, secret('123456'));
+        I.fillField(this.passwordInput, secret('W123456'));
         I.click(this.daySelect);
         I.selectOption(this.daySelect, user.day);
         I.click(this.monthSelect);

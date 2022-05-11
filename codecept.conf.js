@@ -35,6 +35,8 @@ exports.config = {
     createAccountPage: './pages/createAccount.js',
     // http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation
     userData: './data/user.js',
+
+    itemOrderPage: './pages/itemOrder.js', //HomeWork 3
   },
   bootstrap: null,
   mocha: {},
