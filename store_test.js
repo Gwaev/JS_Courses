@@ -17,7 +17,7 @@ Scenario('test something', ({ I,
    pause();   // I know that this string not for GIT ;)
 });
 
-Scenario.only ( 'buy item', ({I,
+Scenario.only( 'buy item', ({I,
                             itemOrderPage,
                             homePage,
                             authPage,
@@ -31,7 +31,9 @@ Scenario.only ( 'buy item', ({I,
     itemOrderPage.changeToListView();
     itemOrderPage.makeAnOrder();
     pause();
-    I.see('SHOPPING-CART');
+    //I.see('SHOPPING-CART');
+    itemOrderPage.confirmAnOrder();
+
 });
 
 

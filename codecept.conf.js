@@ -22,8 +22,8 @@ exports.config = {
       load - consider navigation to be finished when the load event is fired.
       domcontentloaded - consider navigation to be finished when the DOMContentLoaded event is fired.
       networkidle - consider navigation to be finished when there are no network connections for at least 500 ms.*/
-      waitForTimeout: 10000,   //in case if 1 second is not enough for response
-      timeout: 10000,
+      waitForTimeout: 30000,   //in case if 1 second is not enough for response
+      timeout: 30000,
     }
   },
   include: {
