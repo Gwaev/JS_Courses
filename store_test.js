@@ -1,6 +1,6 @@
 Feature('Store');
 
-Scenario('test something', ({ I,
+Scenario.skip('test something', ({ I,
                                homePage,
                                authPage,
                                createAccountPage,
@@ -28,12 +28,11 @@ Scenario.only( 'buy item', ({I,
     authPage.singInForUser(userData);
     homePage.openStore();
     homePage.clickWomenButton();
-    itemOrderPage.changeToListView();
-    itemOrderPage.makeAnOrder();
-    pause();
+    homePage.changeToListView();
+    homePage.makeAnOrder();
+    //pause();
     //I.see('SHOPPING-CART');
     itemOrderPage.confirmAnOrder();
-
-});
+    });
 
 
