@@ -16,14 +16,11 @@ exports.config = {
       show: true,
       browser: 'chromium',
       waitForNavigation: 'networkidle0',
-      /*When to consider navigation succeeded, defaults to load.
-      Given an array of event strings, navigation is considered to be successful
-      after all events have been fired. Events can be either:
-      load - consider navigation to be finished when the load event is fired.
-      domcontentloaded - consider navigation to be finished when the DOMContentLoaded event is fired.
-      networkidle - consider navigation to be finished when there are no network connections for at least 500 ms.*/
-      waitForTimeout: 30000,   //in case if 1 second is not enough for response
+            waitForTimeout: 30000,
       timeout: 30000,
+    },
+    ChaiWrapper: {
+      require: 'codeceptjs-chai'
     }
   },
   include: {
