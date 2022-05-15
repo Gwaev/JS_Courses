@@ -23,4 +23,5 @@ module.exports = {
         return this.convertStringToArray(this.getContentFromFile(FILE_PATH));
     }
 
+
 }

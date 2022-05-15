@@ -11,7 +11,4 @@ module.exports = {
     homePhone: '+380936665544',
     mobilePhone: '+380937774422',
     companyName: 'GeeksForLess',
-    email: '210327042022@test.com',
-    passwd: '.VhGDZ!wqiKy@59',
-
 }
