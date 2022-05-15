@@ -21,8 +21,9 @@ exports.config = {
     },
     ChaiWrapper: {
       require: 'codeceptjs-chai'
-    }
+    },
   },
+
   include: {
     I: './steps_file.js',
     homePage: './pages/home.js',

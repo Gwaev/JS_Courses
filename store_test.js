@@ -24,16 +24,21 @@ Before(({homePage, authPage}) => {
     authPage.singInForUser(loginsArray[0]);
 });
 Scenario(
-  "buy item",
-  ({ I, itemOrderPage, homePage }) => {
+  "buy item", async ({ I, itemOrderPage, homePage }) => {
     homePage.openStore();
     homePage.clickWomenButton();
     homePage.changeToListView();
+    homePage.openProduct();
+    let productPrice = await homePage.getPrice();
+    let productQuantity = await homePage.getQuantity();
     homePage.makeAnOrder();
-    pause();
-    I.see('SHOPPING-CART');
+    let shippingPrice = await itemOrderPage.getShippingPrice();
     itemOrderPage.confirmAnOrder();
-  }
+    let totalPrice = await itemOrderPage.getTotalOrderPrise();
+    console.log('Price:' + productPrice + '\nQuantity:' + productQuantity + '\nshipping:' + shippingPrice + '\nTotal Prise:' + totalPrice);
+    console.log('Total price correct?: ' + ((Number(productPrice) * Number(productQuantity) + Number(shippingPrice)) === Number(totalPrice)));
+    //I.assertEqual(((Number(productPrice) * Number(productQuantity) + Number(shippingPrice)), Number(totalPrice));
+    }
 ).tag('@order26blouse');
 
 After(({authPage}) => {

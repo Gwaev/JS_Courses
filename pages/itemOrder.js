@@ -1,12 +1,24 @@
 const { I } = inject();
 
 module.exports = {
+    totalShipping: {xpath: '//*[@id="total_shipping"]'},
+    totalOrderPrise: {xpath: '//*[@id="center_column"]/div/span'},
     summaryProceedToCheckout: {xpath: '//*[@id="center_column"]/p[2]/a[1]'},
     addressProceedToCheckout: {xpath: '//*[@id="center_column"]/form/p/button'},
     shippingProceedToCheckout: {xpath: '//*[@id="form"]/p/button'},
     shippingTermsAgreementCheckBox: {xpath: '//*[@id="cgv"]'},
     payByBankWire: {xpath: '//*[@id="HOOK_PAYMENT"]/div[1]/div/p/a'},
     confirmAnOrderButton: {xpath: '//*[@id="cart_navigation"]/button'},
+
+    async getShippingPrice() {
+        let prise = await I.grabTextFrom(this.totalShipping);
+        return prise.substring(1);
+    },
+
+    async getTotalOrderPrise() {
+        let prise = await I.grabTextFrom(this.totalOrderPrise);
+        return prise.substring(2);
+    },
 
     confirmAnOrder() {
         I.waitForVisible(this.summaryProceedToCheckout);
