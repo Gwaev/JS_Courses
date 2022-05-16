@@ -37,7 +37,7 @@ Scenario(
     let totalPrice = await itemOrderPage.getTotalOrderPrise();
     console.log('Price:' + productPrice + '\nQuantity:' + productQuantity + '\nshipping:' + shippingPrice + '\nTotal Prise:' + totalPrice);
     console.log('Total price correct?: ' + ((Number(productPrice) * Number(productQuantity) + Number(shippingPrice)) === Number(totalPrice)));
-    //I.assertEqual(((Number(productPrice) * Number(productQuantity) + Number(shippingPrice)), Number(totalPrice));
+    I.assertEqual((Number(productPrice) * Number(productQuantity) + Number(shippingPrice)), Number(totalPrice));
     }
 ).tag('@order26blouse');
 
